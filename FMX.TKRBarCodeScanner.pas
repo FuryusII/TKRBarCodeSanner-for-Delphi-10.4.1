@@ -8,7 +8,6 @@ unit FMX.TKRBarCodeScanner;
 // http://cc.embarcadero.com/Download.aspx?id=29699
 // For the iOS part it uses the free TMS TTMSFMXZBarReader component
 // http://www.tmssoftware.com/site/blog.asp?post=280
-// Update for Delphi 10.4.1 in 18-01-20221
 
 
 interface
@@ -196,6 +195,29 @@ begin
     {$ENDIF}
 
   end;
+
+//  Intent := TJIntent.Create;
+//  try
+//    Intent.setAction(TJIntent.JavaClass.ACTION_SEND); //Defines the Action.
+//    {$IF RTLVersion > 31}
+//    if TJBuild_VERSION.JavaClass.SDK_INT >= versionCode then
+//    begin
+//      LAuthority := StringToJString(JStringToString(TAndroidHelper.Context.getApplicationContext.getPackageName) + '.fileprovider');
+//      Data  := TJFileProvider.JavaClass.getUriForFile(TAndroidHelper.Context, LAuthority, TJFile.JavaClass.init(StringToJString(FileName)));
+//      Intent.putExtra(TJIntent.JavaClass.EXTRA_STREAM,  TJParcelable.Wrap((Data as ILocalObject).GetObjectID));
+//      Intent.setDataAndType(Data, StringToJString('application/pdf'));
+//      Intent.setFlags(TJIntent.JavaClass.FLAG_GRANT_READ_URI_PERMISSION);
+//      TAndroidHelper.Activity.startActivity(Intent);
+//    end
+//    {$ELSE}
+//    Intent.setType(StringToJString('application/pdf'));
+//    Intent.putExtra(TJIntent.JavaClass.EXTRA_STREAM, TJParcelable.Wrap((FileNameToUri(FileName) as ILocalObject).GetObjectID));
+//    SharedActivity.startActivity(TJIntent.JavaClass.createChooser(Intent, StrToJCharSequence('Selecione um App. de E-mail. *pdf')));
+//    {$ENDIF}
+//  finally
+//    Intent:= Nil ;
+//  end;
+
 end;
 {$ENDIF}
 
